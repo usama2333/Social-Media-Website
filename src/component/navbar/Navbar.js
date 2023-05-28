@@ -21,6 +21,7 @@ import { Notifications } from "@mui/icons-material";
 
 import profile1 from "../../assests/images/profile1.png";
 import profile5 from "../../assests/images/profile5.png";
+import profile11 from '../../assests/images/profile11.jpg'
 
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
@@ -37,6 +38,7 @@ const Navbar = () => {
     const [open , setOpen] = useState(false);
   return (
     <Fragment>
+    
       <AppBar position="sticky">
         <Toolbar
           sx={{
@@ -79,7 +81,7 @@ const Navbar = () => {
             <Badge badgeContent={4} color="error">
               <Notifications />
             </Badge>
-            <Avatar onClick={preState=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile5} />
+            <Avatar onClick={preState=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile11} />
           </Icons>
           <Box
             sx={{
@@ -88,7 +90,7 @@ const Navbar = () => {
               gap: "10px",
             }}
           >
-            <Avatar onClick={e=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile5} />
+            <Avatar onClick={e=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile11} />
             <Typography variant="span">Usama Ahmed</Typography>
           </Box>
         </Toolbar>
@@ -116,6 +118,7 @@ const Navbar = () => {
         </Box>
         {/* open and close menu end */}
       </AppBar>
+     
     </Fragment>
   );
 };
