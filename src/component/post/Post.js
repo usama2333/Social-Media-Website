@@ -21,7 +21,7 @@ import cover2 from '../../assests/images/cover2.jpg';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 
-const Post = () => {
+const Post = ({name,cover,profile,date,text}) => {
   return (
     <Fragment>
 
@@ -32,8 +32,8 @@ const Post = () => {
     <Card>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: 'red'}} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: 'sky-blue'}} aria-label="recipe">
+            {profile}
           </Avatar>
         }
         action={
@@ -41,20 +41,18 @@ const Post = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={name}
+        subheader={date}
       />
       <CardMedia
         component="img"
         // height="194"
-        image={cover2}
+        image={cover}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {text}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

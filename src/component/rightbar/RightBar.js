@@ -83,8 +83,8 @@ const RightBar = () => {
           <Typography variant="h6" fontWeight={100}>
             Online Friends
           </Typography>
-          <Box>
-            <AvatarGroup max={7}>
+          <Box >
+            <AvatarGroup sx={{mr : '90px'}} max={7}>
               <Avatar alt="Remy Sharp" src={profile1} />
               <Avatar alt="Travis Howard" src={profile2} />
               <Avatar alt="Cindy Baker" src={profile3} />

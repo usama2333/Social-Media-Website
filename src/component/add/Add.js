@@ -82,7 +82,7 @@ const Add = () => {
 
          <Box>
          <ButtonGroup fullWidth variant="contained" aria-label="outlined primary button group">
-      <Button>Post</Button>
+      <Button onClick={handleClose}>Post</Button>
       <Button sx={{width : '100px'}}>
         <DateRangeIcon/>
       </Button>

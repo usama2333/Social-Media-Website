@@ -8,6 +8,7 @@ import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NightlightIcon from '@mui/icons-material/Nightlight';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const SideBar = ({mode , setMode}) => {
   return (
@@ -85,7 +86,9 @@ const SideBar = ({mode , setMode}) => {
           <ListItem disablePadding>
             <ListItemButton component ='a' href='#simple-list'>
               <ListItemIcon>
-                <NightlightIcon/>
+              {mode === 'light'? <LightModeIcon/> : <NightlightIcon/>}
+                
+                
               </ListItemIcon>
               <Switch onChange={e=>setMode(mode === 'light' ? 'dark' : 'light')}/>
             </ListItemButton>

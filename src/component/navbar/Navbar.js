@@ -18,10 +18,13 @@ import InputBase from "@mui/material/InputBase";
 import MailIcon from "@mui/icons-material/Mail";
 import { Notifications } from "@mui/icons-material";
 // import Notifications from '@mui/icons-material/Notifications';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import profile1 from "../../assests/images/profile1.png";
 import profile5 from "../../assests/images/profile5.png";
 import profile11 from '../../assests/images/profile11.jpg'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const notify = (error) => toast('Logout Successfully');
 
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
@@ -36,6 +39,14 @@ const Icons = styled("div")(({ theme }) => ({
 
 const Navbar = () => {
     const [open , setOpen] = useState(false);
+    const [check , setCheck] = useState(true);
+    const [name , setName] = useState('Usama Ahmed')
+
+    const logoutHandler = () => {
+        notify();
+        setCheck(false);
+        setName('Anonymous')
+    }
   return (
     <Fragment>
     
@@ -52,7 +63,7 @@ const Navbar = () => {
               display: { xs: "none", sm: "block" },
             }}
           >
-            Usama Ahmed
+            {name}
           </Typography>
 
           <AccessibilityNewIcon
@@ -81,7 +92,7 @@ const Navbar = () => {
             <Badge badgeContent={4} color="error">
               <Notifications />
             </Badge>
-            <Avatar onClick={preState=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile11} />
+            <Avatar onClick={preState=>setOpen(true)} sx={{ width: 30, height: 30 }} src={check === true ? profile11 : <AccountCircleIcon/>} />
           </Icons>
           <Box
             sx={{
@@ -90,7 +101,7 @@ const Navbar = () => {
               gap: "10px",
             }}
           >
-            <Avatar onClick={e=>setOpen(true)} sx={{ width: 30, height: 30 }} src={profile11} />
+            <Avatar onClick={e=>setOpen(true)} sx={{ width: 30, height: 30 }} src={check === true ? profile11 : <AccountCircleIcon/>} />
             <Typography variant="span">Usama Ahmed</Typography>
           </Box>
         </Toolbar>
@@ -113,11 +124,12 @@ const Navbar = () => {
           >
             <MenuItem >Profile</MenuItem>
             <MenuItem >My account</MenuItem>
-            <MenuItem >Logout</MenuItem>
+            <MenuItem onClick={logoutHandler} >Logout</MenuItem>
           </Menu>
         </Box>
         {/* open and close menu end */}
       </AppBar>
+      <ToastContainer/>
      
     </Fragment>
   );

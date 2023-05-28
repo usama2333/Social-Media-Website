@@ -17,7 +17,7 @@ function App() {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 600,
+        sm: 700,
         md: 960,
         lg: 1280,
         xlg: 1500,
@@ -32,13 +32,18 @@ function App() {
   });
   return (
     <Fragment>
+    
       <ThemeProvider theme={theme}>
         <Box bgcolor={'background.default'} color={'text.primary'}>
+
           <Navbar />
+          <Container maxWidth='xl'>
           <Home mode={mode} setMode={setMode}/>
           <Add />
+          </Container>
         </Box>
       </ThemeProvider>
+      
     </Fragment>
   );
 }
