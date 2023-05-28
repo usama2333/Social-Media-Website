@@ -9,7 +9,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 
-const SideBar = () => {
+const SideBar = ({mode , setMode}) => {
   return (
     <Fragment>
   
@@ -87,7 +87,7 @@ const SideBar = () => {
               <ListItemIcon>
                 <NightlightIcon/>
               </ListItemIcon>
-              <Switch/>
+              <Switch onChange={e=>setMode(mode === 'light' ? 'dark' : 'light')}/>
             </ListItemButton>
           </ListItem>
 

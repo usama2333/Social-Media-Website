@@ -1,4 +1,4 @@
-import { Avatar, Box, Stack, TextField } from '@mui/material'
+import { Avatar, Box, ButtonGroup, Stack, TextField } from '@mui/material'
 import React, { Fragment } from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import { Fab } from '@mui/material';
@@ -11,6 +11,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import PhotoIcon from '@mui/icons-material/Photo';
 import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 const style = {
   position: 'absolute',
@@ -19,7 +20,8 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   height : 280,
-  bgcolor: 'background.paper',
+  bgcolor:'background.default' ,
+  color:'text.primary',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -77,6 +79,16 @@ const Add = () => {
          <VideoCameraBackIcon color='success'/>
          <PersonAddIcon color='error'/>
          </Stack>
+
+         <Box>
+         <ButtonGroup fullWidth variant="contained" aria-label="outlined primary button group">
+      <Button>Post</Button>
+      <Button sx={{width : '100px'}}>
+        <DateRangeIcon/>
+      </Button>
+      
+    </ButtonGroup>
+         </Box>
           
         </Box>
       </Modal>
