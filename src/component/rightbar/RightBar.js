@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import profile1 from "../../assests/images/profile1.png";
@@ -30,45 +30,15 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
     title: "Camera",
   },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-  //   title: 'Coffee',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-  //   title: 'Hats',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-  //   title: 'Honey',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-  //   title: 'Basketball',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-  //   title: 'Fern',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-  //   title: 'Mushrooms',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-  //   title: 'Tomato basil',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-  //   title: 'Sea star',
-  // },
-  // {
-  //   img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-  //   title: 'Bike',
-  // },
+
 ];
 
 const RightBar = () => {
+  const [num , setNum] = useState(7);
+
+  const openImageHandler = () =>{
+    setNum(num === 7 ? 9 : 7)
+  }
   return (
     <Fragment>
       <Box
@@ -84,7 +54,7 @@ const RightBar = () => {
             Online Friends
           </Typography>
           <Box >
-            <AvatarGroup sx={{mr : '90px'}} max={7}>
+            <AvatarGroup onClick={openImageHandler} sx={{mr : '90px'}} max={num}>
               <Avatar alt="Remy Sharp" src={profile1} />
               <Avatar alt="Travis Howard" src={profile2} />
               <Avatar alt="Cindy Baker" src={profile3} />

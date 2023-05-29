@@ -9,7 +9,38 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import ListCom from './ListCom';
 
+const data = [
+  {
+    icon : <HomeIcon/>,
+    name : 'Home'
+  },
+  {
+    icon : <ArticleIcon/>,
+    name : 'Pages'
+  },
+  {
+    icon : <GroupIcon/>,
+    name : 'Groups'
+  },
+  {
+    icon : <StorefrontIcon/>,
+    name : 'Market Place'
+  },
+  {
+    icon :  <EmojiPeopleIcon/>,
+    name : 'Friends'
+  },
+  {
+    icon : <SettingsIcon/>,
+    name : 'Setting'
+  },
+  {
+    icon : <AccountBoxIcon/>,
+    name : 'Profile'
+  },
+]
 const SideBar = ({mode , setMode}) => {
   return (
     <Fragment>
@@ -20,69 +51,10 @@ const SideBar = ({mode , setMode}) => {
       }}>
       <Box sx={{position : 'fixed'}}>
          <List>
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#home'>
-              <ListItemIcon>
-                <HomeIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-list'>
-              <ListItemIcon>
-                <ArticleIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Pages" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-list'>
-              <ListItemIcon>
-                <GroupIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Groups" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-list'>
-              <ListItemIcon>
-                <StorefrontIcon/>
-              </ListItemIcon>
-              <ListItemText primary="MarketPlace" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-list'>
-              <ListItemIcon>
-                <EmojiPeopleIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Friends" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-list'>
-              <ListItemIcon>
-                <SettingsIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Setting" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton component ='a' href='#simple-listsimple-list'>
-              <ListItemIcon>
-                <AccountBoxIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Profile" />
-            </ListItemButton>
-          </ListItem>
-
+         {data.map((data) => (
+          <ListCom name={data.name} icon={data.icon}/>
+         ))}
+         
           <ListItem disablePadding>
             <ListItemButton component ='a' href='#simple-list'>
               <ListItemIcon>
